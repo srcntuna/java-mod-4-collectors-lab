@@ -7,9 +7,16 @@ class Main {
 
     // modify this method
     public static long multiplySquaresOfNumbers(List<Integer> numbers) {
-        // your code here
-        return 0;
+        // your code here                                                1
+        return numbers.stream().collect(Collectors.reducing(1,(x,y)->x*y*y)).longValue();
+
     }
+
+    //ANOTHER SOLUTION
+
+    //return numbers.stream().mapToLong(num -> num * num).reduce((a,b) -> a * b).getAsLong();
+
+
 
     public static void main(String[] args) {
 
